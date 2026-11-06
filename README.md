@@ -116,7 +116,7 @@ $env:HOST='0.0.0.0'; node server/index.mjs
 想在别处继续用，有三种方式：
 
 1. **换另一台电脑（最简单，数据完整）**
-   - 把整个 `D:\AI\cuotiben` 文件夹（或本项目的 `dist/zhicuo-portable-20261104.zip` 便携包）复制到新电脑；
+   - 把整个 `D:\AI\cuotiben` 文件夹（或本地生成的便携包 `dist/zhicuo-portable-*.zip`）复制到新电脑；
    - 新电脑安装 Node.js 20+；
    - 解压后运行 `start.cmd`（本机）或 `start-lan.cmd`（手机访问）。
    - `data/db.json` 和 `data/uploads/` 一起带走即可保留所有错题与练习记录。便携包已包含当前 14 道示例数据。
@@ -328,6 +328,8 @@ cuotiben/
 ├─ start-lan.cmd         # Windows 一键启动（手机可访问）
 └─ package.json
 ```
+
+> `dist/`、`.tools/`、`android/app/build/`、`data/db.json`、`data/uploads/` 等本地生成物已加入 `.gitignore`，不随仓库分发；Android APK 见 [GitHub Releases](https://github.com/milelee0/zhicuo/releases)。
 
 ## 已知边界
 
