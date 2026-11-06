@@ -1,0 +1,26 @@
+node_modules/
+data/db.json
+data/db.json.tmp
+data/uploads/
+docs/shots/
+.dev.vars
+.cf-token
+.wrangler/
+dist/
+.tools/
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/.idea/
+android/build-log.txt
+*.log
+.DS_Store
+
+# 本地构建产物 / 大文件
+public/downloads/
+android/.kotlin/
+android/app/release/
+.tmp/
+dist/android-check/
+*.apk

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1E2533" />
+    <meta name="description" content="知错 · AI 智能错题本：拍照识题、错因诊断、知识点掌握指南、举一反三与组卷打印。" />
+    <title>知错 · 智能错题本</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23C94B36'/%3E%3Ctext x='32' y='45' font-family='serif' font-size='40' text-anchor='middle' fill='%23FBF7EC'%3E错%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="./css/book.css" />
+    <link rel="stylesheet" href="./css/add.css" />
+    <link rel="stylesheet" href="./css/practice.css" />
+    <link rel="stylesheet" href="./css/paper.css" />
+    <link rel="stylesheet" href="./css/mastery.css" />
+    <link rel="stylesheet" href="./css/settings.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside class="sidebar" id="sidebar" aria-label="主菜单">
+        <a class="brand" href="#/dashboard" aria-label="知错首页">
+          <span class="brand-seal">知</span>
+          <span class="brand-word"><strong>知错</strong><span>ZHI CUO · AI</span></span>
+        </a>
+        <p class="brand-tagline">把每一道错题<br />变成下一次的得分点</p>
+
+        <nav class="nav" id="nav">
+          <a class="nav-link" href="#/dashboard" data-route="dashboard"
+            ><span data-icon="dashboard"></span><span>总览</span></a
+          >
+          <a class="nav-link" href="#/book" data-route="book"
+            ><span data-icon="book"></span><span>错题本</span><span class="nav-count" id="nav-count" hidden></span
+          ></a>
+          <a class="nav-link" href="#/add" data-route="add"
+            ><span data-icon="plus"></span><span>录入错题</span></a
+          >
+          <a class="nav-link" href="#/practice" data-route="practice"
+            ><span data-icon="practice"></span><span>举一反三</span></a
+          >
+          <a class="nav-link" href="#/paper" data-route="paper"
+            ><span data-icon="paper"></span><span>组卷打印</span></a
+          >
+          <a class="nav-link" href="#/mastery" data-route="mastery"
+            ><span data-icon="mastery"></span><span>掌握度</span></a
+          >
+        </nav>
+
+        <section class="sidebar-review" aria-label="今日复习">
+          <div class="sr-label"><span data-icon="clock"></span> 今日待复习</div>
+          <div class="sr-num" id="due-count">—<small>道</small></div>
+          <a class="btn btn-sm" href="#/practice?start=due">开始复习 <span data-icon="arrow-right"></span></a>
+        </section>
+
+        <div class="sidebar-foot">
+          <button class="ai-status" id="ai-status" type="button" title="AI 连接状态">
+            <span class="dot"></span><span class="txt">读取 AI 状态…</span>
+          </button>
+          <a class="icon-btn" href="#/settings" id="settings-link" aria-label="设置" title="设置"></a>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar" id="topbar">
+          <div class="crumb"><span id="page-kicker">WORKDESK</span></div>
+          <div class="topbar-actions">
+            <button class="search-trigger" id="search-trigger" type="button" aria-label="搜索错题">
+              <span data-icon="search"></span><span>搜索错题、知识点</span><span class="kbd">Ctrl K</span>
+            </button>
+            <a class="btn btn-red" href="#/add" id="top-add"><span data-icon="plus"></span>录入错题</a>
+          </div>
+        </header>
+        <div id="view" class="view-root" role="region" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <div id="overlay-root"></div>
+    <div id="toast-root"></div>
+
+    <script type="module" src="./js/app.js"></script>
+    <noscript>请启用 JavaScript 以使用知错智能错题本。</noscript>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "zhicuo-ai-mistake-book",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "知错 · AI 智能错题本：拍照识题、错因诊断、知识掌握评估、举一反三、组卷打印",
+  "scripts": {
+    "start": "node server/index.mjs",
+    "dev": "node server/index.mjs",
+    "test": "node scripts/smoke.mjs",
+    "test:ui": "node scripts/ui-check.mjs",
+    "cf:seed": "node scripts/build-cloudflare-seed.mjs",
+    "cf:login": "node scripts/cf.mjs login",
+    "cf:dev": "node scripts/cf.mjs dev --local --port 8788",
+    "cf:migrate:local": "node scripts/cf.mjs d1 migrations apply zhicuo --local",
+    "cf:migrate": "node scripts/cf.mjs d1 migrations apply zhicuo --remote",
+    "cf:deploy": "node scripts/cf.mjs deploy",
+    "android:build": "cd android && gradlew.bat :app:assembleDebug",
+    "android:test": "cd android && gradlew.bat :app:testDebugUnitTest"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.157.0"
+  }
+}
